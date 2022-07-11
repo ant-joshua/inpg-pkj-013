@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* background-color: red; */
+      }
+      .menu-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 3rem;
+      }
+      .item-menu {
+        padding: 10px;
+        list-style: none;
+        font-size: 1.2rem;
+      }
+      .item-menu a {
+        text-decoration: none;
+        color: black;
+      }
+      .item-menu a:hover {
+        color: red;
+      }
+      .navbar {
+        background-color: #f5f5f5;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        color: #006699;
+      }
+      #biodata {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        min-height: 100px;
+        display: flex;
+        /* Border with shadow */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #ccc;
+        padding: 20px;
+      }
+      .biodata-summary {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+      }
+      .profile-photo {
+        width: 40%;
+        padding-right: 3rem;
+      }
+      .profile-data {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #my-name{
+        text-align: left;
+      }
+      .mobile-menu{
+        display: none;
+      }
+      /* Mobile media query */
+      @media screen and (max-width: 600px) {
+        .mobile-menu{
+          display: flex;
+        }
+        #my-name{
+            text-align: center;
+        }
+        .menu-list {
+          flex-direction: column;
+          display: none;
+        }
+        .item-menu {
+          margin-bottom: 10px;
+        }
+        #biodata {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          background-color: white;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          /* Border with shadow */
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px #ccc;
+          padding: 20px;
+        }
+        .biodata-summary {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+        .profile-photo {
+          width: 100%;
+          padding-right: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .profile-photo img {
+          width: 100%;
+          /* Center */
+        }
+        .profile-data {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+      .img-rounded {
+        border-radius: 50%;
+      }
+      .object-cover {
+        object-fit: cover;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      /* Taiwlind Button */
+      .btn {
+        background-color: #006699;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-row {
+        flex-direction: row;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .justify-content-space-between {
+        justify-content: space-between;
+      }
+      .justify-content-space-around {
+        justify-content: space-around;
+      }
+      .justify-content-center {
+        justify-content: center;
+      }
+      .mr-1 {
+        margin-right: 1rem;
+      }
+      .mr-2 {
+        margin-right: 2rem;
+      }
+      .mb-1 {
+        margin-bottom: 1rem;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .py-1 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .py-2 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .input-text {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .pb-1 {
+        padding-bottom: 1rem;
+      }
+      #form-input-biodata {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        min-height: 100px;
+        display: flex;
+        /* Border with shadow */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #ccc;
+        padding: 20px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Logo</div>
+      <ul class="menu-list">
+        <li class="item-menu">
+          <a href="#">Home</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Product</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Gallery</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Blog</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Inventory</a>
+        </li>
+      </ul>
+      <div class="mobile-menu">
+        <button class="btn mobile-menu-button">
+            Menu
+        </button>
+      </div>
+      <!-- 
+      <ul class="menu-list-mobile">
+        <li class="item-menu">
+          <a href="#">Home</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Product</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Gallery</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Blog</a>
+        </li>
+        <li class="item-menu">
+          <a href="">Inventory</a>
+        </li>
+      </ul> -->
+    </nav>
+    <main>
+      <section id="biodata">
+        <div class="biodata-summary">
+          <div class="profile-photo">
+            <img
+              class="img-rounded object-cover w-100"
+              src="https://avatars.githubusercontent.com/u/15034309?v=4"
+              alt="profile"
+            />
+          </div>
+          <div class="profile-data">
+            <h1 id="my-name">Nama Anda</h1>
+            <h4>Frontend Engineer</h4>
+            <div>
+              <button class="btn">Edit</button>
+              <button class="btn">Resume</button>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-content-center">
+          <div class="flex flex-row py-1">
+            <div class="mr-2">Available</div>
+            <div>Fulltime</div>
+          </div>
+          <div class="flex flex-row py-1">
+            <div class="mr-2">Available</div>
+            <div>Fulltime</div>
+          </div>
+          <div class="flex flex-row py-1">
+            <div class="mr-2">Available</div>
+            <div>Fulltime</div>
+          </div>
+          <div class="flex flex-row py-1">
+            <div class="mr-2">Available</div>
+            <div>Fulltime</div>
+          </div>
+        </div>
+      </section>
+      <section id="form-input-biodata">
+        <form class="form">
+          <div class="input-group mb-1">
+            <label class="pb-1">Nama</label>
+            <input class="input-text" type="text" />
+          </div>
+          <div class="input-group mb-1">
+            <label class="pb-1">Nama</label>
+            <input class="input-text" type="text" />
+          </div>
+          <div class="input-group mb-1">
+            <label class="pb-1">Nama</label>
+            <input class="input-text" type="text" />
+          </div>
+          <div class="input-group mb-1">
+            <label class="pb-1">Nama</label>
+            <input class="input-text" type="text" />
+          </div>
+          <div class="input-group mb-1">
+            <label class="pb-1">Nama</label>
+            <input class="input-text" type="text" />
+          </div>
+          <div class="input-group mb-1">
+            <label class="pb-1">Email</label>
+            <input class="input-text" type="email" />
+          </div>
+          <input class="btn" type="submit" value="Save" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
