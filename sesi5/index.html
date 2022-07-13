@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <div id="nama"></div>
+    <div id="umur"></div>
+
+
+    <ul id="hobbies"></ul>
+
+    <button onclick="sayHello()">Say Hello</button>
+
+    <div>
+        <label>Nilai </label>
+        <input type="number" id="nilai">
+    </div>
+    <div>
+        <label>Nilai 2</label>
+        <input type="number" id="nilai2">
+    </div>
+    
+    
+
+    <button onclick="penambahan()">Tambah</button>
+
+    
+    <script>
+        var nama = "Rizki";
+        var umur = 20;
+        var manusia = {
+            nama: "Rizki",
+            umur: 20,
+            sayHello: function(){
+                console.log(this.nama,this.umur);
+            }
+        };
+        var hobbies = ["Berenang","Makan","Tidur","Mendengarkan Musik"];
+        
+        document.getElementById('nama').innerHTML = "<h1>"+nama+"</h1>";
+        document.getElementById('umur').innerHTML = "<h1>"+umur+"</h1>";
+        manusia.sayHello();
+
+        var listHobbies = document.getElementById('hobbies');
+        for(var i = 0; i < hobbies.length; i++){
+            var listItem = document.createElement('li');
+            listItem.innerHTML = hobbies[i];
+            listHobbies.appendChild(listItem);
+        }
+
+        function sayHello(){
+            alert("Hello");
+        }
+
+        function penambahan(){
+            var nilai1 = document.getElementById('nilai').value;
+            var nilai2 = document.getElementById('nilai2').value;
+            var hasil = parseInt(nilai1) + parseInt(nilai2);
+            alert(hasil);
+        }
+
+        let kondisi = "sakit";
+
+        if(kondisi === "lapar"){
+            alert("Saya lapar");
+        }else if(kondisi === "sakit"){
+            alert("Saya sakit");
+        }else{
+            alert("Saya tidak lapar");
+        }
+
+        let tulisan = "Saya sedang tidur";
+
+        for(let i = 0; i < 20; i++){
+            console.log(tulisan);
+        }
+
+        let date = new Date();
+
+        // let d
+
+        // function penambahan(...b){
+        //     var hasil = 0;
+        //     for(var i = 0; i < b.length; i++){
+        //         hasil += b[i];
+        //     }
+        //     console.log(hasil);
+        //     return hasil;
+        // }
+
+
+    </script>
+</body>
+</html>
