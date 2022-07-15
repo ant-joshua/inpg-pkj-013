@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="judul">Get By Id</h1>
+
+    <input type="text" name="nama" id="name" placeholder="Nama" value="joshua">
+
+    <div class="section"></div>
+    <div class="section"></div>
+    
+    <script>
+        var judul = document.getElementById('judul');
+        // console.log(judul.innerText);
+
+
+        var sections = document.getElementsByClassName('section');
+        // console.dir(sections);
+
+        setTimeout(function(){
+            sections[0].innerText = 'Hello World';
+        }, 2000);
+
+        setTimeout(function(){
+            judul.remove();
+        }, 2000);
+
+        // var judulByQuery = document.querySelector('#judul');
+        // console.log(judulByQuery);
+
+        // var sectionsByQuery = document.querySelectorAll('.section');
+        // console.dir(sectionsByQuery);
+
+        // document.createElement('p')
+
+        // document.body.appendChild(document.createElement('p'));
+    </script>
+</body>
+</html>

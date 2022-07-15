@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Create Background Change Input -->
+    <div>
+      <label> Background Color </label>
+      <input type="color" id="bg-color" value="#fff" />
+    </div>
+
+    <!-- Create Text Change Input -->
+    <div>
+      <label> Text Color </label>
+      <input type="color" id="text-color" value="#000" />
+    </div>
+
+    <script>
+        var bgColor = document.getElementById('bg-color');
+        bgColor.addEventListener('input', function() {
+            document.body.style.backgroundColor = bgColor.value;
+        });
+
+        var textColor = document.getElementById('text-color');
+        textColor.addEventListener('input', function() {
+            document.body.style.color = textColor.value;
+        });
+    </script>
+  </body>
+</html>

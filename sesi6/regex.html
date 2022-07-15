@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input{
+            width: 100%;
+            max-height: 40px;
+            border: 5px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .input:focus{
+            border: 5px solid #000;
+        }
+        .input:hover{
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Create Input Email -->
+    <div>
+        <label>Email</label>
+        <input type="email" class="input" id="email" placeholder="Email" value="" />
+    </div>
+    
+    <script>
+
+        var email = document.getElementById('email');
+        email.addEventListener('input', function() {
+            var email_value = email.value;
+            var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (email_regex.test(email_value)) {
+                
+                email.style.borderColor = 'green';
+            } else {
+                email.style.borderColor = 'red';
+            }
+        });
+
+        var pola = /[abcde]/;
+
+        console.log(pola.test(1+'belajar'));
+    </script>
+</body>
+</html>
